@@ -2,30 +2,28 @@ class Bird
 {
 	public void fly()
 	{
-		System.Console("I can fly!");
+		Console.WriteLine("I can fly!");
 	}
 }
 
 class Kingfisher : Bird
 {
 
-	public Kingfisher()
+	public Kingfisher() : base()
 	{
-		base();
 	}
 
 }
 
 class Ostrich : Bird
 {
-	public Ostrich()
+	public Ostrich() : base()
 	{
-		base();
 	}
 
-	public void fly()
+	public void Fly()
 	{
-		throw new Error("I don't fly rather I run");
+		throw new Exception("I don't fly rather I run");
 	}
 
 	public void run()

@@ -21,7 +21,7 @@ class LightSwitch
 		this.lightBulb = lightBulb;
 	}
 
-	onPress()
+	public void onPress()
 	{
 		if (this.isOn)
 		{

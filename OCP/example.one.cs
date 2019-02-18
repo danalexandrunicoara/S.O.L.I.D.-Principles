@@ -2,7 +2,7 @@ class CreditCard
 {
 	private string firstname = string.Empty;
 	private string lastname = string.Empty;
-	private Date expirationDate = string.Empty;
+	private DateTime expirationDate = new DateTime();
 
 	private string type;
 
@@ -13,12 +13,12 @@ class CreditCard
 		return this.firstname + " " + this.lastname;
 	}
 
-	public Date getExpirationDate()
+	public DateTime getExpirationDate()
 	{
 		return this.expirationDate;
 	}
 
-	public int getMonthlyDiscount()
+	public double getMonthlyDiscount()
 	{
 		if (this.type == "Silver")
 		{

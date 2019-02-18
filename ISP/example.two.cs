@@ -8,7 +8,7 @@ interface IStaple
 	void stapleDocument(Document document, int tray);
 }
 
-interface Copier
+interface ICopier
 {
 	void copyDocument();
 }
@@ -49,4 +49,9 @@ class SuperPrinter : IPrinter, IStaple, ICopier
 	{
 		//...
 	}
+}
+
+class Document
+{
+
 }

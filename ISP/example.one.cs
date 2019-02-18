@@ -24,3 +24,7 @@ class SimplePrinter : IPrinter
 	}
 
 }
+
+class Document {
+	
+}

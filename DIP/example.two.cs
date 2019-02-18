@@ -1,4 +1,3 @@
-
 interface ILightBulb
 {
 	void turnOn();
@@ -29,16 +28,16 @@ class LightSwitch
 		this.lightBulb = lightBulb;
 	}
 
-	onPress()
+	public void onPress()
 	{
 		if (this.isOn)
 		{
-			this.bulb.turnOn();
+			this.lightBulb.turnOn();
 			this.isOn = false;
 		}
 		else
 		{
-			this.bulb.turnOff();
+			this.lightBulb.turnOff();
 			this.isOn = true;
 		}
 	}

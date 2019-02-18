@@ -2,15 +2,15 @@ class CreditCard
 {
 	private string firstname = string.Empty;
 	private string lastname = string.Empty;
-	private Date expirationDate = string.Empty;
+	private DateTime expirationDate = new DateTime();
 
 	protected int monthlyCost = 0;
 
 	private Persistence persistence;
 
-	private CreditCard(string firstname, string lastname, Date expirationDate, int monthlyCost, Persistence persistence)
+	private CreditCard(string firstname, string lastname, DateTime expirationDate, int monthlyCost, Persistence persistence)
 	{
-		this.persistence = persistence.connect("admin:password@fakedb");
+		this.persistence = persistence;
 
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -23,12 +23,12 @@ class CreditCard
 		return this.firstname + " " + this.lastname;
 	}
 
-	public Date getExpirationDate()
+	public DateTime getExpirationDate()
 	{
 		return this.expirationDate;
 	}
 
-	public Date getMonthlyDiscount()
+	public double getMonthlyDiscount()
 	{
 		return this.monthlyCost * 0.02;
 	}
@@ -40,7 +40,8 @@ class CreditCardRepository
 
 	public CreditCardRepository(Persistence persistence)
 	{
-		this.persistence = persistence.connect("admin:password@fakedb");
+		this.persistence = persistence;
+		this.persistence.connect("admin:password@fakedb");
 	}
 
 	public void save(CreditCard creditCard)
@@ -51,13 +52,13 @@ class CreditCardRepository
 
 class Persistence
 {
-	public static void connect(string connectionString)
+	public void connect(string connectionString)
 	{
-		throw new Error("Method not implemented.");
+		throw new Exception("Method not implemented.");
 	}
 
 	public void saveCreditCard(CreditCard creditCard)
 	{
-		throw new Error("Method not implemented.");
+		throw new Exception("Method not implemented.");
 	}
 }
