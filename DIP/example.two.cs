@@ -32,12 +32,12 @@ class LightSwitch
 	{
 		if (this.isOn)
 		{
-			this.lightBulb.turnOn();
+			this.lightBulb.turnOff();
 			this.isOn = false;
 		}
 		else
 		{
-			this.lightBulb.turnOff();
+			this.lightBulb.turnOn();
 			this.isOn = true;
 		}
 	}
